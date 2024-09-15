@@ -1,4 +1,5 @@
 
+
 /*
   dish file
   Michael Romero
@@ -18,49 +19,49 @@ Dish::Dish(const std::string& name, const std::vector<std::string>& ingredients,
     setCuisineType(cuisine_type);
 }
 
-void Dish::setName(const std::string &name){name_=name;}
+void Dish :: setName(const std::string &name){name_=name;}
 
-std::string Dish::getName() const{return name_;}
+std::string Dish :: getName() const{return name_;}
 
-void Dish::setIngredients(const std::vector<std::string> &ingredients){ingredients_=ingredients;}
+void Dish :: setIngredients(const std::vector<std::string> &ingredients){ingredients_=ingredients;}
 
 std::vector<std::string>Dish::getIngredients() const{return ingredients_;}
 
-void Dish::setPrepTime(const int &prep_time){prep_time_=prep_time;}
+void Dish :: setPrepTime(const int &prep_time){prep_time_=prep_time;}
 
-int Dish::getPrepTime() const{return prep_time_;}
+int Dish :: getPrepTime() const{return prep_time_;}
 
-void Dish::setPrice(const double &price){price_=price;}
+void Dish :: setPrice(const double &price){price_=price;}
 
-double Dish::getPrice() const{return price_;}
+double Dish :: getPrice() const{return price_;}
 
-void Dish::setCuisineType(const CuisineType &cuisine_type){cuisine_type_=cuisine_type;}
+void Dish :: setCuisineType(const CuisineType &cuisine_type){cuisine_type_=cuisine_type;}
 
-std::string Dish :: getCuisineType()const{
+std :: string Dish :: getCuisineType()const{
     switch(cuisine_type_){
-        case ITALIAN:
-         return "ITALIAN";
+        case CHINESE:
+         return "CHINESE";
          break;
 
         case MEXICAN:
          return "MEXICAN";
          break;
 
-        case CHINESE:
-         return "CHINESE";
-         break;
-
         case INDIAN:
          return "INDIAN";
          break;
-
-        case AMERICAN:
-         return "AMERICAN";
+        
+        case ITALIAN:
+         return "ITALIAN";
          break;
 
         case FRENCH:
          return "FRENCH";
          break;
+
+        case AMERICAN:
+         return "AMERICAN";
+         break;  
 
         case OTHER:
          return "OTHER";
@@ -69,17 +70,17 @@ std::string Dish :: getCuisineType()const{
 }
 
 void Dish::display() const{
-    std::cout<<"Dish Name: " << getName() << std :: endl;
-    std::cout<<"Ingredients: ";
+    std :: cout<<"Dish Name: " << getName() << std :: endl;
+    std :: cout<<"Ingredients: ";
     for(size_t i= 0; i<ingredients_.size();i+=1){
-        std::cout<<ingredients_[i];
+        std :: cout<<ingredients_[i];
         if(i < ingredients_.size() -1){
-            std::cout<<", ";
+            std :: cout<<", ";
         }
     }
-    std::cout<<std::endl;
+    std :: cout<<std::endl;
 
-    std::cout<<"Preparation Time: "<< getPrepTime() << "minutes" << std::endl;
-    std::cout<<"Price: $" << std :: fixed << std :: setprecision(2) << getPrice() << std :: endl;
-    std::cout<<"Cuisine Type: " << getCuisineType() << std :: endl;
+    std :: cout<<"Preparation Time: "<< getPrepTime() << "minutes" << std::endl;
+    std :: cout<<"Price: $" << std :: fixed << std :: setprecision(2) << getPrice() << std :: endl;
+    std :: cout<<"Cuisine Type: " << getCuisineType() << std :: endl;
 }
